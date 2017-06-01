@@ -147,66 +147,101 @@ for item in results:
 ingredient_data = pd.DataFrame(results)
 
 
+# In[16]:
+
+sns.distplot(ingredient_data['ingredient_line_frequency'].astype(int));
+
+
 # We remove duplicates.
 
-# In[16]:
+# In[17]:
 
 ingredient_data = ingredient_data.drop_duplicates()
 pretty.PrettyPandas(ingredient_data.sort_values(['ingredient_line_entity','ingredient_line_frequency','ingredient_line']).sample(5))
 
 
-# In[17]:
+# In[18]:
 
 print ingredient_data.shape
 
 
+# Distribution plot of the frequency of line ingredients.
+
+# In[19]:
+
+sns.distplot(ingredient_data['ingredient_line_frequency'].astype(int));
+
+
+# Most of the valid line ingredients are eggs, garlic and salt.
+
+# In[20]:
+
+item_plot = sns.barplot(x=ingredient_data['ingredient_line_frequency'].astype(int), y='ingredient_line_entity', data=ingredient_data[ingredient_data['line_item_info_valid'] == 'yes'][:25])
+plt.setp(item_plot.get_xticklabels(), rotation=45);
+
+
+# Similar plot for not valid ingredient lines. Interestingly, some of them seem valid, like banana or avocado.
+
+# In[21]:
+
+item_plot = sns.barplot(x=ingredient_data['ingredient_line_frequency'].astype(int), y='ingredient_line_entity', data=ingredient_data[ingredient_data['line_item_info_valid'] == 'no'][:25])
+plt.setp(item_plot.get_xticklabels(), rotation=45);
+
+
+# Let's check what happens when the ingredient is banana and the item was labeled as not valid. It seems OK.
+
+# In[22]:
+
+ingredient_data[(ingredient_data['ingredient_line_entity'] == 'banana') & (ingredient_data['line_item_info_valid'] == 'no')]
+
+
 # Most of the items are valid ingredient lines.
 
-# In[18]:
+# In[23]:
 
 print ingredient_data.line_item_info_valid.value_counts()
 
 
-# In[19]:
+# In[24]:
 
 print((ingredient_data.line_item_info_valid.value_counts()/ingredient_data.line_item_info_valid.value_counts().sum())*100)
 
 
 # Let's see the breakdown of items that are not valid ingredients:
 
-# In[20]:
+# In[25]:
 
 ingredient_data[ingredient_data['line_item_info_valid'] == 'no'].line_item_info_other_information.value_counts()
 
 
-# In[21]:
+# In[26]:
 
 ingredient_data_not_valid = pd.DataFrame(data=ingredient_data[ingredient_data['line_item_info_valid'] == 'no'].line_item_info_other_information.value_counts())
 
 
-# In[22]:
+# In[27]:
 
 ingredient_data_not_valid = ingredient_data_not_valid.reset_index()
 
 
-# In[23]:
+# In[28]:
 
 ingredient_data_not_valid.columns=['line_item_info_other_information', 'item_count']
 
 
-# In[24]:
+# In[29]:
 
 ingredient_data_not_valid
 
 
 # Most of the not valid ingredient lines are 'section_header' and 'other_or_none_of_the_above'.
 
-# In[25]:
+# In[30]:
 
 sns.distplot(ingredient_data_not_valid['item_count']);
 
 
-# In[26]:
+# In[31]:
 
 ingredients_plot = sns.barplot(x='item_count', y='line_item_info_other_information', data=ingredient_data_not_valid)
 plt.setp(ingredients_plot.get_xticklabels(), rotation=45);
