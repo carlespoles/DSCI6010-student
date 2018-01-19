@@ -249,7 +249,7 @@ get_ipython().run_cell_magic(u'bigquery', u'execute -q imported_urls', u'')
 # In[31]:
 
 
-get_ipython().run_cell_magic(u'sql', u'--module imported_recipes', u"SELECT url, COUNT(url) AS count_urls\nFROM [firebase-wellio:recipes.imported_recipes]\nWHERE url IS NOT NULL AND url <> '#'\nGROUP BY url\nORDER BY count_urls DESC\nLIMIT 1000")
+get_ipython().run_cell_magic(u'sql', u'--module imported_recipes', u"SELECT url, COUNT(url) AS count_urls\nFROM [firebase-wellio:recipes.imported_recipes]\nWHERE url IS NOT NULL AND url <> '#'\nGROUP BY url\nORDER BY count_urls DESC\n-- We limit the number of records since when we export this query to a dataframe, the notebook can't handle 8 million rows.\nLIMIT 1000")
 
 
 # In[32]:
