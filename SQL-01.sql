@@ -1,5 +1,5 @@
 -- Unnest a list of items in a row of BigQuery table.
--- One row of data looks like this (it's a list of ite,s):
+-- One row of data looks like this (it's a list of items):
 
 -- vegetarian  
 -- vegan  
