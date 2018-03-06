@@ -7,8 +7,8 @@ The main goal of the internship has been developing and implementing a business 
 
 Since data is confidential, I can't show any screenshot of the dashboard. However, I can show some of the SQL statements that I have implemented to obtain some of the relevant metrics: these are the files with the naming convention ```SQL-xx.sql```.
 
-Queries have been tested first in Google Cloud BigQuery.
+Queries have been tested first in Google Cloud Platform BigQuery.
 
 Also, some notebooks have been developed using Google Cloud Datalab to perform EDA in some datasets.
 
-The python environment is the same one that was set up during the [Capstone project](https://github.com/carlespoles/DSCI6051-student).
+The python environment is the same one that was set up during the [Capstone project](https://github.com/carlespoles/DSCI6051-student), as well as the instructions to create a Google Cloud Platform VM instance to create and lunch notebooks using Datalab.
