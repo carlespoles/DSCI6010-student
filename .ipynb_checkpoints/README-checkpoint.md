@@ -3,9 +3,10 @@ GalvanizeU-University of New Haven Master of Science in Data Science - DSCI6010:
 
 This internship has been done in the same company where the Capstone was completed, which is[wellio](http://www/getwellio.com).
 
-Transfer learning using the `InceptionV3` architecture has been implemented and can be found on the [`transfer_learning`](transfer_learning) folder.
+The main goal of the internship has been developing and implementing a business dashboard with metrics that are relevant to the business using Google's Data Studio.
 
-<img src='capstone-diagram.png' />
+Since data is confidential, I can't show any screenshot of the dashboard. However, I can show some of the SQL statements that I have implemented to obtain some of the relevant metrics: these are the files with the naming convention ```SQL-xx.sql```.
+
 
 Wellio’s recommendation system allows a user to ask for recipe through a conversational interface. When retrieving the search results, Wellio ranks them using various criteria. Wellio has noticed that their customers tend to choose recipes that are more visually appealing when the results are displayed. Hence, Wellio need to enable the search to also rank on appearance of the recipe.
 
