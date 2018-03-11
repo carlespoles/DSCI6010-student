@@ -5,7 +5,13 @@ This internship has been done in the same company where the Capstone was complet
 
 The main goal of the internship has been developing and implementing a business dashboard with metrics that are relevant to the business using Google's Data Studio.
 
-Since data is confidential, I can't show any screenshot of the dashboard. However, I can show some of the SQL statements that I have implemented to obtain some of the relevant metrics: these are the files with the naming convention ```SQL-xx.sql```.
+I show some screenshots of the dashboard as well as some of the SQL statements that I have implemented to obtain some of the relevant metrics: these are the files with the naming convention ```SQL-xx.sql```.
+
+<img src='images/d-1.jpg'/>
+<img src='images/d-2.jpg'/>
+<img src='images/d-3.jpg'/>
+<img src='images/d-4.jpg'/>
+<img src='images/d-5.jpg'/>
 
 Queries have been tested first in Google Cloud Platform BigQuery.
 
