@@ -11,7 +11,6 @@ I show some screenshots of the dashboard as well as some of the SQL statements t
 <img src='images/d-2.jpg'/>
 <img src='images/d-3.jpg'/>
 <img src='images/d-4.jpg'/>
-<img src='images/d-5.jpg'/>
 
 Queries have been tested first in Google Cloud Platform BigQuery.
 
